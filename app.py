@@ -119,7 +119,7 @@ st.markdown("""
 
 st.title("محلل المشاعر العربي")
 st.markdown(
-    '<p class="subtitle">أداة ذكاء اصطناعي تحدد ما إذا كان النص العربي إيجابيًا أو سلبيًا. '
+    '<p class="subtitle">اداة ذكاء اصطناعي تحدد ما اذا كان النص العربي ايجابيا او سلبيا. '
     'تم تدريبها على 8,364 تقييم حقيقي لمطاعم عربية باستخدام TF-IDF والانحدار اللوجستي، '
     'وحققت دقة 82% على بيانات لم يسبق للنموذج رؤيتها.</p>',
     unsafe_allow_html=True
@@ -130,15 +130,15 @@ st.divider()
 col_result, col_input = st.columns([1, 1], gap="large")
 
 with col_input:
-    st.subheader("جرّب بنفسك")
-    user_input = st.text_area("اكتب جملتك هنا:", height=150, placeholder="اكتب رأيك عن مطعم أو تجربة...")
+    st.subheader("جرب بنفسك")
+    user_input = st.text_area("اكتب جملتك هنا:", height=150, placeholder="اكتب رأيك عن مطعم او تجربة...")
     analyze_clicked = st.button("تحليل", type="primary")
 
 with col_result:
     st.subheader("النتيجة")
     if analyze_clicked:
         if user_input.strip() == "":
-            st.warning("الرجاء إدخال نص.")
+            st.warning("الرجاء ادخال نص.")
         else:
             clean = clean_arabic_text(user_input)
             vec = vectorizer.transform([clean])
@@ -146,7 +146,7 @@ with col_result:
             prob = model.predict_proba(vec)[0]
             confidence = max(prob)
 
-            label = "إيجابي 😊" if pred == 1 else "سلبي 😞"
+            label = "ايجابي 😊" if pred == 1 else "سلبي 😞"
             css_class = "result-positive" if pred == 1 else "result-negative"
 
             st.markdown(f"""
