@@ -2,6 +2,8 @@
 
 A machine learning web app that classifies Arabic text as **positive** or **negative** in real time. Built and trained from scratch using a real-world Arabic restaurant review dataset.
 
+🔗 **Live demo:** [Try it here](https://arabic-sentiment-analyzer-hfkq7rsrfpnccksj2lsdbl.streamlit.app/)
+
 ## Overview
 
 This project takes raw, unstructured Arabic text (like customer reviews) and predicts its sentiment using a classic NLP pipeline: text cleaning → TF-IDF vectorization → Logistic Regression classification.
